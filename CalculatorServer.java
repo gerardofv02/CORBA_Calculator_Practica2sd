@@ -6,6 +6,7 @@ import org.omg.CORBA.*;
 import org.omg.PortableServer.*;
 import org.omg.PortableServer.POA;
 import java.util.Properties;
+import java.lang.Math;
 
 class calculatorImpl extends calculatorPOA {
 
@@ -30,6 +31,9 @@ class calculatorImpl extends calculatorPOA {
 
     public double subtraction(double a, double b) {
         return a - b;
+    }
+    public double square_root(double a){
+        return Math.sqrt(a);
     }
     private ORB orb;
 
