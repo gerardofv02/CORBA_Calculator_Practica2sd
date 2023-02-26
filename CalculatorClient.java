@@ -39,6 +39,7 @@ public class CalculatorClient {
         System.out.println("2. Subtraction");
         System.out.println("3. Multiplication");
         System.out.println("4. Division");
+        System.out.println("5. Square root");
         System.out.println("0. Exit");
 
         BufferedReader in1=new BufferedReader(new InputStreamReader(System.in));
@@ -54,24 +55,30 @@ public class CalculatorClient {
         System.out.println("enter number1:");
         num1=Double.parseDouble(in.readLine());
 
-        System.out.println("enter number2:");
-        num2=Double.parseDouble(in.readLine());
 
         switch(ch)
         {
           case 1:
+                  System.out.println("enter number2:");
+                   num2=Double.parseDouble(in.readLine());
               result=calImpl.addition(num1,num2);
               break;
 
           case 2:
+                  System.out.println("enter number2:");
+                  num2=Double.parseDouble(in.readLine());
               result=calImpl.subtraction(num1,num2);
               break;
 
           case 3:
+                  System.out.println("enter number2:");
+                 num2=Double.parseDouble(in.readLine());
               result=calImpl.multiplication(num1,num2);
               break;
 
           case 4:
+                  System.out.println("enter number2:");
+                  num2=Double.parseDouble(in.readLine());
               try {
               result=calImpl.division(num1,num2);
               } catch (DivisionByZero de) {
@@ -79,6 +86,12 @@ public class CalculatorClient {
                }
               break;
         }
+        case 5:
+            try{
+                result = calImpl.square_root(num1);
+            } catch(error e){
+                System.out.println(e);
+            }
               System.out.println("result is:"+result);
 
         }

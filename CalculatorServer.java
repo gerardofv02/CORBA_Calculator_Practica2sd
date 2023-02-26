@@ -32,9 +32,11 @@ class calculatorImpl extends calculatorPOA {
     public double subtraction(double a, double b) {
         return a - b;
     }
+    
     public double square_root(double a){
         return Math.sqrt(a);
     }
+    
     private ORB orb;
 
     public void setORB(ORB orb_val) {
