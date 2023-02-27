@@ -4,12 +4,13 @@ module CalApp
   {
     
     exception DivisionByZero {};
+    exception Negative {};
 
     double addition(in double x,in double y);
     double subtraction(in double x,in double y);
     double multiplication(in double x,in double y);
     double division(in double x,in double y) raises (DivisionByZero);
-    double square_root(in double x);
+    double square_root(in double x) raises (Negative);
 
     oneway void shutdown();
   };

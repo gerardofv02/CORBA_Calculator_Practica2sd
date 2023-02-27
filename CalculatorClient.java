@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import CalApp.*;
 import CalApp.calculatorPackage.DivisionByZero;
+import CalApp.calculatorPackage.Negative;
 import org.omg.CosNaming.*;
 import org.omg.CosNaming.NamingContextPackage.*;
 import org.omg.CORBA.*;
@@ -86,7 +87,11 @@ public class CalculatorClient {
                }
               break;
               case 5: 
+              try{
                 result=calImpl.square_root(num1);
+              } catch(Negative ne){
+                  out.println("Cant be negative!");
+                }
                 break;
         }
             System.out.println("result is:"+result);

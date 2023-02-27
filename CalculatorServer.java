@@ -1,5 +1,6 @@
 import CalApp.*;
 import CalApp.calculatorPackage.DivisionByZero;
+import CalApp.calculatorPackage.Negative;
 import org.omg.CosNaming.*;
 import org.omg.CosNaming.NamingContextPackage.*;
 import org.omg.CORBA.*;
@@ -32,8 +33,13 @@ class calculatorImpl extends calculatorPOA {
     public double subtraction(double a, double b) {
         return a - b;
     }
-    public double square_root(double a){
+    public double square_root(double a) throws Negative {
+        if(a < 0){
+            throw new CalApp.calculatorPackage.Negative();
+        }
+        else{
         return Math.sqrt(a);
+        }
     }
     private ORB orb;
 
