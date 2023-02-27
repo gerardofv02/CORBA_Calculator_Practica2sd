@@ -12,12 +12,12 @@ import java.lang.Math;
 class calculatorImpl extends calculatorPOA {
 
    
-    public double addition(double a, double b) {
+    public double addition(double a, double b) { //suma
         return a + b;
     }
 
   
-    public double division(double a, double b) throws DivisionByZero {
+    public double division(double a, double b) throws DivisionByZero { // división con su excepción
         if (b == 0) {
             throw new CalApp.calculatorPackage.DivisionByZero();
         } 
@@ -26,24 +26,24 @@ class calculatorImpl extends calculatorPOA {
         }
     }
 
-    public double multiplication(double a, double b) {
+    public double multiplication(double a, double b) { //multiplicación
         return a * b;
     }
 
-    public double subtraction(double a, double b) {
+    public double subtraction(double a, double b) { // resta
         return a - b;
     }
     public double square_root(double a) throws Negative {
         if(a < 0){
-            throw new CalApp.calculatorPackage.Negative();
+            throw new CalApp.calculatorPackage.Negative(); // si es menor que 0 lanzamos excepción
         }
         else{
-        return Math.sqrt(a);
+        return Math.sqrt(a); // si es 0 o mayor devolvemos la raiz cuadrada del número
         }
-    }
+    }  // funcion de square root creada con su propia excepción añadida anteriormente en idl creada en el servidor
     private ORB orb;
 
-    public void setORB(ORB orb_val) {
+    public void setORB(ORB orb_val) { 
         orb = orb_val;
     }
     public void shutdown() {
