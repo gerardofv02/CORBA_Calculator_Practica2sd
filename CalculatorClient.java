@@ -11,23 +11,22 @@ import static java.lang.System.out;
 
 public class CalculatorClient {
 
-    static calculator calImpl;
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static calculator calImpl; // creamos la variable calImpl de tipo calculator
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
 
     public static void main(String args[]) {
-        double result=0.0,num1=0.0,num2=0.0;
+        double result=0.0,num1=0.0,num2=0.0; //creamos variables
 
         try {
-            // create and initialize the ORB
+            // creamos e inicializamos el orbe
             ORB orb = ORB.init(args, null);
 
-            // get the root naming context
+            // obtenemos el contexto con la variable del NameService
             org.omg.CORBA.Object objRef = orb.resolve_initial_references("NameService");
-            // Use NamingContextExt instead of NamingContext. This is
-            // part of the Interoperable naming Service.
+            // creamos otra referencia con el contexto de antes
             NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef);
 
-            // resolve the Object Reference in Naming
+            // obtenemos la referencia del objeto
             String name = "Calculator";
             calImpl = calculatorHelper.narrow(ncRef.resolve_str(name));
 
@@ -36,15 +35,15 @@ public class CalculatorClient {
 
        while(ch!=0)
        {
-        System.out.println("1. Addition");
-        System.out.println("2. Subtraction");
-        System.out.println("3. Multiplication");
-        System.out.println("4. Division");
+        System.out.println("1. Addition"); //opcion de suma
+        System.out.println("2. Subtraction"); //opcion de resta
+        System.out.println("3. Multiplication"); //opcion de multiplicacion
+        System.out.println("4. Division"); //opcion de division
         System.out.println("5. Square Root"); // opcion de raiz cuadrada para que el cliente pueda escogerla en el siguiente switch
         System.out.println("6. Squared"); // opción de elevado al cuadrado para que el cliente pueda escogerla en el siguiente switch
-        System.out.println("0. Exit");
+        System.out.println("0. Exit"); //opciond e slaida
 
-        BufferedReader in1=new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader in1=new BufferedReader(new InputStreamReader(System.in)); //creamos la variable inl para recibir lo que el cliente desee hacer
 
         System.out.println("enter your choice:");
         ch=Integer.parseInt(in1.readLine());

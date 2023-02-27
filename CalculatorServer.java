@@ -58,18 +58,18 @@ public class CalculatorServer {
 
     public static void main(String args[]) {
         try {
-            // create and initialize the ORB
+            // creamos e inicializamos el orbe 
             ORB orb = ORB.init(args, null);
 
-            // get reference to rootpoa & activate the POAManager
+            // obtenemos la ruta del POA a través de la función narrow y lo activamos
             POA rootpoa = POAHelper.narrow(orb.resolve_initial_references("RootPOA"));
             rootpoa.the_POAManager().activate();
 
-            // create servant and register it with the ORB
+            // registramos el servant con el orb para poder tener la referencia más adelante
             calculatorImpl myImpl = new calculatorImpl();
             myImpl.setORB(orb);
 
-            // get object reference from the servant
+            // obtenemos la referencia
             org.omg.CORBA.Object ref = rootpoa.servant_to_reference(myImpl);
             calculator href = calculatorHelper.narrow(ref);
 
@@ -87,7 +87,7 @@ public class CalculatorServer {
 
             System.out.println("Ready..");
 
-            // wait for invocations from clients
+            // ejecutamos el servidor para que esté disponible para las peticiones de los clientes
             orb.run();
         } catch (Exception e) {
             System.err.println("ERROR: " + e);
