@@ -41,6 +41,9 @@ class calculatorImpl extends calculatorPOA {
         return Math.sqrt(a); // si es 0 o mayor devolvemos la raiz cuadrada del número
         }
     }  // funcion de square root creada con su propia excepción añadida anteriormente en idl creada en el servidor
+    public double squared(double a) { // al cuadrado
+        return a * a;
+    }// funcion de elevado al cuadrado creada en el servidor
     private ORB orb;
 
     public void setORB(ORB orb_val) { 

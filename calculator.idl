@@ -11,6 +11,7 @@ module CalApp
     double multiplication(in double x,in double y);
     double division(in double x,in double y) raises (DivisionByZero);
     double square_root(in double x) raises (Negative);
+    double squared(in double x);
 
     oneway void shutdown();
   };

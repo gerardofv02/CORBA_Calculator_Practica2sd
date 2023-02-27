@@ -41,6 +41,7 @@ public class CalculatorClient {
         System.out.println("3. Multiplication");
         System.out.println("4. Division");
         System.out.println("5. Square Root"); // opcion de raiz cuadrada para que el cliente pueda escogerla en el siguiente switch
+        System.out.println("6. Squared"); // opción de elevado al cuadrado para que el cliente pueda escogerla en el siguiente switch
         System.out.println("0. Exit");
 
         BufferedReader in1=new BufferedReader(new InputStreamReader(System.in));
@@ -93,6 +94,9 @@ public class CalculatorClient {
                   out.println("Cant be negative!"); // si es menor que 0 entramos en ekl catch  de la excepción negative y decimos que no puede ser negativa ya que esto sería si no un número imaginario
                 }
                 break;
+              case 6: //caso de elevado al cuadrado
+                result=calImpl.squared(num1); 
+              break;
         }
             System.out.println("result is:"+result); // impresión del resultado
 
