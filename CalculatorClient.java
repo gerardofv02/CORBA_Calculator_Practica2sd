@@ -39,7 +39,7 @@ public class CalculatorClient {
         System.out.println("2. Subtraction");
         System.out.println("3. Multiplication");
         System.out.println("4. Division");
-        System.out.println("5. Square root");
+        System.out.println("5. Square Root");
         System.out.println("0. Exit");
 
         BufferedReader in1=new BufferedReader(new InputStreamReader(System.in));
@@ -85,29 +85,24 @@ public class CalculatorClient {
                 out.println("Division by zero!!!");
                }
               break;
+              case 5: 
+                result=calImpl.square_root(num1);
+                break;
         }
-        case 5:
-            try{
-                result = calImpl.square_root(num1);
-            } catch(error e){
-                System.out.println(e);
-            }
-              System.out.println("result is:"+result);
-
-        }
+            System.out.println("result is:"+result);
 
       }
 
 
             
-         catch (Exception e) {
+    }         catch (Exception e) {
             System.out.println("ERROR : " + e);
             e.printStackTrace(System.out);
         }
-    }
 
     //static float getFloat(String number) throws Exception {
        // out.print(number + ": ");
        // return Float.parseFloat(br.readLine());
    // }
+}
 }
