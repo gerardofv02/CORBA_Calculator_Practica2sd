@@ -33,23 +33,19 @@ public class CalculatorClient {
             //System.out.println(calculatorImpl);
             int ch=1;
 
-       while(ch!=0)
-       {
+
         System.out.println("1. Addition"); //opcion de suma
         System.out.println("2. Subtraction"); //opcion de resta
         System.out.println("3. Multiplication"); //opcion de multiplicacion
         System.out.println("4. Division"); //opcion de division
         System.out.println("5. Square Root"); // opcion de raiz cuadrada para que el cliente pueda escogerla en el siguiente switch
         System.out.println("6. Squared"); // opción de elevado al cuadrado para que el cliente pueda escogerla en el siguiente switch
-        System.out.println("0. Exit"); //opciond e slaida
 
         BufferedReader in1=new BufferedReader(new InputStreamReader(System.in)); //creamos la variable inl para recibir lo que el cliente desee hacer
 
         System.out.println("enter your choice:");
         ch=Integer.parseInt(in1.readLine());
         
-        if(ch==0)
-          break;
 
         BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
 
@@ -99,7 +95,7 @@ public class CalculatorClient {
         }
             System.out.println("result is:"+result); // impresión del resultado
 
-      }
+      
 
 
             
